@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@import "./bootstrap-icon/bootstrap-icons.css";
+@import "./@fancyapps/ui/dist/fancybox/fancybox.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dropdown-toggle-without-caret::after {
+  display: none;
+}
+
+.accordion-pages .accordion-item .accordion-button.not-parent::after {
+  display: none;
+}
+
+.accordion-collapse.show {
+  visibility: visible;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #212529;
+  background-color: #fff;
+}

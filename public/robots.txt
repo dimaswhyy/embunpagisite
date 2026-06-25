@@ -1,0 +1,26 @@
+# robots.txt for https://embunpagi.sch.id
+
+User-agent: *
+# Izinkan semua crawler mengindeks halaman penting
+Allow: /
+
+# Blokir folder yang tidak relevan untuk SEO
+Disallow: /emptyspace-secure/*
+Disallow: /emptyspace-secure/login/
+Disallow: /login/
+Disallow: /register/
+Disallow: /search
+Disallow: /apps/
+Disallow: /shell/
+
+# Blokir file sensitif atau duplikat konten
+Disallow: /cgi-bin/
+Disallow: /*?sessionid=
+Disallow: /*?ref=
+
+# Jangan indeks halaman hasil pencarian internal
+Disallow: /search
+Disallow: /?s=
+
+# Sitemap (penting untuk SEO)
+Sitemap: https://embunpagi.sch.id/sitemap.xml

@@ -1,0 +1,187 @@
+@extends('layout')
+
+@section('content')
+
+<style>
+  .chart-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+<section class="my-10">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10"> 
+    <div class="rounded-3xl w-full h-96 overflow-hidden relative">
+      <img src="{{ asset('storage') }}/SMP-SMA/School Facilities/EPIS JHS&SHS_20230801_111216.jpg" class="w-full h-full object-cover" />
+      <div class="absolute top-0 left-0 w-full h-full p-10 text-white flex justify-center items-end text-3xl font-bold bg-gradient-blue-transparent">Senior High School</div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-gradient-ivory py-32 relative overflow-hidden">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10"> 
+    <div class="pb-20">
+      <p class="leading-loose">Ensuring the continuation and sustainable learning of EPIS graduates, we established EPIS Senior High in 2022. EPIS Senior High is here as your partner in building our youth to be Future Islamic Leaders. Together, we could facilitate them to become Empathetic Islamic Leaders and Patriotic Global Citizens that have an Inspiring Grateful Life and be Successful Here & Hereafter.</p>
+    </div>
+    <div class="flex flex-col lg:flex-row gap-20 justify-between items-center">
+      <div class="w-full lg:w-6/12">
+        <h2 class="text-center lg:text-left mb-10 lg:m-0 font-semibold text-blue text-3xl leading-relaxed manrope">Curriculum</h2>
+        <div class="py-8 leading-loose text-center lg:text-left">
+          <p class="mb-4">The Senior High School uses a combination of:</p>
+          <ul class="p-0 pb-5">
+            <li class="flex gap-3 items-start mb-3 text-left">
+              <img src="{{ asset('img/item-list-type.svg') }}" class="w-5 h-5 mt-2" />
+              <span><strong>Kurikulum Merdeka</strong><br/><em>(Optional Subjects: Physics, Chemistry, Biology, Sociology, Economics, Geography, Advanced Maths, ICT)</em></span>
+            </li>
+            <li class="flex gap-3 items-start mb-3 text-left">
+              <img src="{{ asset('img/item-list-type.svg') }}" class="w-5 h-5 mt-2" />
+              <span><strong>Cambridge curicullum</strong></span>
+            </li>
+            <li class="flex gap-3 items-start text-left">
+              <img src="{{ asset('img/item-list-type.svg') }}" class="w-5 h-5 mt-2" />
+              <span><strong>EPIS curicullum</strong><br/><em>(Adab class, IKIGAI practice, Tahfidz, Life Skill Program, Literacy & Numeracy Program, English Club, Journalistic Club)</em></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="w-full lg:w-6/12 relative">
+        <div class="relative w-11/12 h-80">
+          <img src="{{ asset('storage') }}/SMP-SMA/School Facilities/Science Lab.JPG" alt="Senior School Image" class="w-full h-full object-cover rounded-3xl relative z-10" />
+          <div class="absolute left-0 top-0 w-full h-full bg-orange-light rotate-6 rounded-3xl"></div>
+        </div>
+        <img src="{{ asset('img/star-1.svg') }}" class="absolute -top-20 right-0 w-20 hidden md:block">
+        <img src="{{ asset('img/star-2.svg') }}" class="absolute -bottom-10 -left-24 w-20 hidden md:block">
+      </div>
+    </div>
+  </div>
+
+  <img src="{{ asset('img/sun-vector.svg') }}" class="absolute -bottom-16 -left-32 w-72 hidden md:block">
+  <img src="{{ asset('img/bg-pattern-half.svg') }}" class="absolute bottom-0 right-0 h-44 hidden md:block">
+</section>
+
+<section class="py-10 relative">
+  <div class="chart-wrapper">
+    <div id="chart-program-highlights"></div>
+  </div>
+</section>
+
+<section class="py-10 relative">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+    <h2 class="text-center mb-10 lg:m-0 font-semibold text-blue text-3xl leading-relaxed manrope pb-5">Extracurricular</h2>
+    <div class="py-5">
+      <div class="flex flex-wrap justify-center gap-5 -mx-5 py-5">
+        <div class="w-5/12 lg:w-2/12">
+          <div class="block text-center pb-10">
+            <div class="card-flip card-ekskul">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="{{ asset('storage') }}/basketball-icon.svg" alt="Basket Icon">
+                </div>
+                <div class="card-back">
+                  <img src="{{ asset('storage') }}/SMP-SMA/Extracurricular/Basket.jpeg" alt="Basket Image">
+                </div>
+              </div>
+            </div>
+            <p class="text-center">Basketball</p>
+          </div>
+        </div>
+        <div class="w-5/12 lg:w-2/12">
+          <div class="block text-center pb-10">
+            <div class="card-flip card-ekskul">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="{{ asset('storage') }}/futsal-icon.svg" alt="Futsal Icon">
+                </div>
+                <div class="card-back">
+                  <img src="{{ asset('storage') }}/SMP-SMA/Extracurricular/Futsal_0101.png" alt="Futsal Image">
+                </div>
+              </div>
+            </div>
+            <p class="text-center">Futsal</p>
+          </div>
+        </div>
+        <div class="w-5/12 lg:w-2/12">
+          <div class="block text-center pb-10">
+            <div class="card-flip card-ekskul">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="{{ asset('storage') }}/swim-icon.svg" alt="Swimming Icon">
+                </div>
+                <div class="card-back">
+                  <img src="{{ asset('storage') }}/SMP-SMA/Extracurricular/Renang.png" alt="Swimming Image">
+                </div>
+              </div>
+            </div>
+            <p class="text-center">Swimming</p>
+          </div>
+        </div>
+        <div class="w-5/12 lg:w-2/12">
+          <div class="block text-center pb-10">
+            <div class="card-flip card-ekskul">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="{{ asset('storage') }}/dance-icon.svg" alt="Traditional Dance Icon">
+                </div>
+                <div class="card-back">
+                  <img src="{{ asset('storage') }}/SMP-SMA/Extracurricular/Traditional Dance.JPG" alt="Traditional Dance Image">
+                </div>
+              </div>
+            </div>
+            <p class="text-center">Traditional Dance</p>
+          </div>
+        </div>
+        <div class="w-5/12 lg:w-2/12">
+          <div class="block text-center pb-10">
+            <div class="card-flip card-ekskul">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="{{ asset('storage') }}/vocal-icon.svg" alt="Vocal Icon">
+                </div>
+                <div class="card-back">
+                  <img src="{{ asset('storage') }}/SMP-SMA/Extracurricular/Vocal.JPG" alt="Vocal Image">
+                </div>
+              </div>
+            </div>
+            <p class="text-center">Vocal</p>
+          </div>
+        </div>
+        <div class="w-5/12 lg:w-2/12">
+          <div class="block text-center pb-10">
+            <div class="card-flip card-ekskul">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="{{ asset('storage') }}/robotic-icon.svg" alt="Robotic Icon">
+                </div>
+                <div class="card-back">
+                  <img src="{{ asset('storage') }}/SMP-SMA/Extracurricular/Robotic (2).png" alt="Robotic Image">
+                </div>
+              </div>
+            </div>
+            <p class="text-center">Robotic</p>
+          </div>
+        </div>
+        <div class="w-5/12 lg:w-2/12">
+          <div class="block text-center pb-10">
+            <div class="card-flip card-ekskul">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="{{ asset('storage') }}/pencak-silat-icon.svg" alt="Pencak Silat Icon">
+                </div>
+                <div class="card-back">
+                  <img src="{{ asset('storage') }}/SMP-SMA/Extracurricular/Taekwondo (6).png" alt="Pencak Silat Image">
+                </div>
+              </div>
+            </div>
+            <p class="text-center">Pencak Silat</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+@include('components.facilities')
+
+@stop
