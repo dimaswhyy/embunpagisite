@@ -1,13 +1,13 @@
 <style>
-    .image-sun {
-        top: -66px;
-        bottom: auto;
-        transform: rotate(211deg);
-    }
+.image-sun {
+    top: -66px;
+    bottom: auto;
+    transform: rotate(211deg);
+}
 </style>
 
 <section class="bg-gradient-ivory py-16 relative overflow-hidden">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="flex gap-10 md:gap-20 flex-col lg:flex-row">
       <div class="w-full h-auto lg:w-6/12 lg:h-45rem relative">
         @foreach($dataModuleContents as $item)
@@ -115,6 +115,10 @@
       </div>
     </div>
   </div>
-  <img src="{{ asset('img/ellipse-ivory.svg') }}" class="absolute bottom-5 -left-36" />
-  <img src="{{ asset('img/sun-vector.svg') }}" class="absolute -bottom-16 -right-40 -rotate-12 w-96 hidden md:block image-sun">
+
+    
+
+    <img src="{{ asset('img/ellipse-ivory.svg') }}" class="absolute bottom-5 -left-36" />
+    <img src="{{ asset('img/sun-vector.svg') }}"
+        class="absolute -bottom-16 -right-40 -rotate-12 w-96 hidden md:block image-sun">
 </section>

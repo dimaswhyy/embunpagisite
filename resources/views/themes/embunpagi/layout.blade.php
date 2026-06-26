@@ -169,6 +169,19 @@
         visibility: visible;
         transform: translateY(0);
     }
+
+    /* Efek seleksi teks di seluruh halaman web */
+    ::selection {
+        background-color: #b3d334;
+        color: #ffffff;
+        /* Warna teks menjadi putih saat diblok */
+    }
+
+    /* Dukungan untuk browser Firefox lama */
+    ::-moz-selection {
+        background-color: #b3d334;
+        color: #ffffff;
+    }
     </style>
 
     <script type="text/javascript">
@@ -252,107 +265,94 @@
 
         <footer class="bg-blue-dark py-20 text-white">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
-                <div class="md:flex md:flex-col lg:flex-row gap-10 justify-between">
-                    <div class="w-full lg:w-8/12">
-                        <div class="flex flex-wrap">
-                            <div class="w-full md:w-4/12 pr-5 pb-10 md:pb-10">
-                                <p class="mb-3"><strong>Nursery & Kindergarten</strong></p>
-                                <p class="mb-3 text-sm flex gap-2">
-                                    <i class="bi bi-geo-alt"></i>
-                                    <a href="https://www.google.com/maps/place/Embun+Pagi+Islamic+School+-+Kindergarten/@-6.2474652,106.9166343,17z/data=!4m15!1m8!3m7!1s0x2e698cd1766d6bc5:0x143e51cc8f785784!2sJl.+Raya+Kalimalang+No.39,+RT.1%2FRW.7,+Pd.+Klp.,+Kec.+Duren+Sawit,+Kota+Jakarta+Timur,+Daerah+Khusus+Ibukota+Jakarta+13450!3b1!8m2!3d-6.2475045!4d106.9192137!16s%2Fg%2F11t54kn2cr!3m5!1s0x2e69f340830eafc3:0x60112f790002f6aa!8m2!3d-6.2475337!4d106.9192371!16s%2Fg%2F1v6gbk91?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D"
-                                        target="_blank"
-                                        class="text-white border-b border-transparent hover:border-white pb-1">
-                                        Jl. Raya Kalimalang No. 39,<br />
-                                        Jakarta Timur 13440
-                                    </a>
-                                </p>
-                                <p class="text-sm mb-2 flex gap-2">
-                                    <i class="bi bi-telephone"></i>
-                                    <a href="tel:62218601626" target="_blank"
-                                        class="text-white border-b border-transparent hover:border-white pb-1">+6221-8601626</a>
-                                </p>
-                                <p class="text-sm mb-2 flex gap-2">
-                                    <i class="bi bi-whatsapp"></i>
-                                    <a href="https://wa.me/628118601626" target="_blank"
-                                        class="text-white border-b border-transparent hover:border-white pb-1">>+62-811-860-1626</a>
-                                </p>
-                            </div>
-                            <div class="w-full md:w-4/12 pr-5 pb-10 md:pb-0">
-                                <p class="mb-3"><strong>Primary School</strong></p>
-                                <p class="mb-3 text-sm flex gap-2">
-                                    <i class="bi bi-geo-alt"></i>
-                                    <a href="https://www.google.com/maps/place/Embun+Pagi+Islamic+School+-+Primary,+Junior+High,+%26+Senior+High/@-6.2489967,106.92656,17z/data=!4m15!1m8!3m7!1s0x2e698cdbe55da37b:0xde1acc8042878f32!2sJl.+Kapin+Raya+Jl.+Raya+Kalimalang+No.8,+RT.9%2FRW.8,+Pd.+Klp.,+Kec.+Duren+Sawit,+Kota+Jakarta+Timur,+Daerah+Khusus+Ibukota+Jakarta+13450!3b1!8m2!3d-6.249002!4d106.9291349!16s%2Fg%2F11g0m91tpq!3m5!1s0x2e698cdbee1f6f25:0x36e0849ebbe1b698!8m2!3d-6.2489727!4d106.9291416!16s%2Fg%2F1pzrj11ll?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D"
-                                        target="_blank"
-                                        class="text-white border-b border-transparent hover:border-white pb-1">
-                                        Jl. Raya Kapin No 8 <br />
-                                        Kalimalang, <br />
-                                        Jakarta Timur 13450
-                                    </a>
-                                </p>
-                                <p class="text-sm m-0 flex gap-2">
-                                    <i class="bi bi-telephone"></i>
-                                    <a href="tel:62218651578" target="_blank"
-                                        class="text-white border-b border-transparent hover:border-white pb-1">+6221-8651578</a>
-                                </p>
-                                <p class="text-sm m-0 flex gap-2">
-                                    <i class="bi bi-whatsapp"></i>
-                                    <a href="https://wa.me/628118651578" target="_blank"
-                                        class="text-white border-b border-transparent hover:border-white pb-1">+62-811-865-1578</a>
-                                </p>
-                            </div>
-                            <div class="w-full md:w-4/12 pr-5 pb-10 md:pb-10">
-                                <p class="mb-3"><strong>Junior & Senior High School</strong></p>
-                                <p class="mb-3 text-sm flex gap-2">
-                                    <i class="bi bi-geo-alt"></i>
-                                    <a href="https://www.google.com/maps/place/Embun+Pagi+Islamic+School+-+Primary,+Junior+High,+%26+Senior+High/@-6.2489967,106.92656,17z/data=!4m15!1m8!3m7!1s0x2e698cdbe55da37b:0xde1acc8042878f32!2sJl.+Kapin+Raya+Jl.+Raya+Kalimalang+No.8,+RT.9%2FRW.8,+Pd.+Klp.,+Kec.+Duren+Sawit,+Kota+Jakarta+Timur,+Daerah+Khusus+Ibukota+Jakarta+13450!3b1!8m2!3d-6.249002!4d106.9291349!16s%2Fg%2F11g0m91tpq!3m5!1s0x2e698cdbee1f6f25:0x36e0849ebbe1b698!8m2!3d-6.2489727!4d106.9291416!16s%2Fg%2F1pzrj11ll?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D"
-                                        target="_blank"
-                                        class="text-white border-b border-transparent hover:border-white pb-1">
-                                        Jl. Raya Kapin No 8 <br />
-                                        Kalimalang, <br />
-                                        Jakarta Timur 13450
-                                    </a>
-                                </p>
-                                <p class="text-sm m-0 flex gap-2">
-                                    <i class="bi bi-whatsapp"></i>
-                                    <a href="https://wa.me/6281188810170" target="_blank"
-                                        class="text-white border-b border-transparent hover:border-white pb-1">+62-811-8881-0170</a>
-                                </p>
-                            </div>
 
+                <div class="flex flex-col md:flex-row gap-6 justify-between w-full">
+
+                    <div class="flex-1 min-w-[200px] pb-10 md:pb-0">
+                        <div class="mb-5">
+                            <img src="{{ asset('img/logo-epis-white.png') }}" alt="Logo-White"
+                                class="h-20 w-auto mb-3 object-contain">
+                        </div>
+                        <div class="flex gap-4 text-xl">
+                            <a href="#" target="_blank"
+                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:opacity-90 transition-opacity">
+                                <i class="bi bi-facebook" style="color: #063046;"></i>
+                            </a>
+
+                            <a href="https://www.instagram.com/embunpagischool" target="_blank"
+                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:opacity-90 transition-opacity">
+                                <i class="bi bi-instagram" style="color: #063046;"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@embunpagischool" target="_blank"
+                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:opacity-90 transition-opacity">
+                                <i class="bi bi-youtube" style="color: #063046;"></i>
+                            </a>
                         </div>
                     </div>
-                    <div class="w-full lg:w-4/12">
-                        <div class="flex flex-wrap">
-                            <div class="w-full md:w-6/12 pb-10 md:pb-10">
-                                <p class="mb-3 leading-loose"><strong>About Us</strong></p>
-                                <p class="leading-loose text-sm m-0"><a href="{{ route('page_front', 'about-us') }}"
-                                        class="text-white">Our Story</a></p>
-                                <p class="leading-loose text-sm m-0"><a href="{{ route('page_front', 'about-us') }}"
-                                        class="text-white">Vision &amp; Mission</a></p>
-                                <p class="leading-loose text-sm m-0"><a href="{{ route('page_front', 'about-us') }}"
-                                        class="text-white">Our Core Values</a></p>
-                                <p class="leading-loose text-sm m-0"><a href="{{ route('page_front', 'about-us') }}"
-                                        class="text-white">Director's Note</a></p>
-                                <p class="leading-loose text-sm m-0"><a href="{{ route('page_front', 'about-us') }}"
-                                        class="text-white">Teams</a></p>
-                            </div>
-                            <div class="w-full md:w-6/12 pb-10 md:pb-10">
-                                <p class="mb-3 leading-loose"><strong>Programs</strong></p>
-                                <p class="leading-loose text-sm m-0"><a
-                                        href="{{ route('page_front', 'nursery-kindergarten') }}"
-                                        class="text-white">Nursery & Kindergarten</a></p>
-                                <p class="leading-loose text-sm m-0"><a
-                                        href="{{ route('page_front', 'primary-school') }}" class="text-white">Primary
-                                        School</a></p>
-                                <p class="leading-loose text-sm m-0"><a
-                                        href="{{ route('page_front', 'junior-high-school') }}" class="text-white">Junior
-                                        High School</a></p>
-                                <p class="leading-loose text-sm m-0"><a
-                                        href="{{ route('page_front', 'senior-high-school') }}" class="text-white">Senior
-                                        High School</a></p>
-                            </div>
-                        </div>
+
+                    <div class="flex-1 min-w-[200px] pb-10 md:pb-0">
+                        <p class="mb-3"><strong>Nursery & Kindergarten</strong></p>
+                        <p class="mb-3 text-sm flex gap-2">
+                            <i class="bi bi-geo-alt"></i>
+                            <a href="https://www.google.com/maps/place/Embun+Pagi+Islamic+School+-+Kindergarten/@-6.2474652,106.9166343,17z/data=!4m15!1m8!3m7!1s0x2e698cd1766d6bc5:0x143e51cc8f785784!2sJl.+Raya+Kalimalang+No.39,+RT.1%2FRW.7,+Pd.+Klp.,+Kec.+Duren+Sawit,+Kota+Jakarta+Timur,+Daerah+Khusus+Ibukota+Jakarta+13450!3b1!8m2!3d-6.2475045!4d106.9192137!16s%2Fg%2F11t54kn2cr!3m5!1s0x2e69f340830eafc3:0x60112f790002f6aa!8m2!3d-6.2475337!4d106.9192371!16s%2Fg%2F1v6gbk91?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D"
+                                target="_blank" class="text-white border-b border-transparent hover:border-white pb-1">
+                                Jl. Raya Kalimalang No. 39,<br />
+                                Jakarta Timur 13440
+                            </a>
+                        </p>
+                        <p class="text-sm mb-2 flex gap-2">
+                            <i class="bi bi-telephone"></i>
+                            <a href="tel:62218601626" target="_blank"
+                                class="text-white border-b border-transparent hover:border-white pb-1">+6221-8601626</a>
+                        </p>
+                        <p class="text-sm mb-2 flex gap-2">
+                            <i class="bi bi-whatsapp"></i>
+                            <a href="https://wa.me/628118601626" target="_blank"
+                                class="text-white border-b border-transparent hover:border-white pb-1">+62-811-860-1626</a>
+                        </p>
                     </div>
+
+                    <div class="flex-1 min-w-[200px] pb-10 md:pb-0">
+                        <p class="mb-3"><strong>Primary School</strong></p>
+                        <p class="mb-3 text-sm flex gap-2">
+                            <i class="bi bi-geo-alt"></i>
+                            <a href="https://www.google.com/maps/place/Embun+Pagi+Islamic+School+-+Primary,+Junior+High,+%26+Senior+High/@-6.2489967,106.92656,17z/data=!4m15!1m8!3m7!1s0x2e698cdbe55da37b:0xde1acc8042878f32!2sJl.+Kapin+Raya+Jl.+Raya+Kalimalang+No.8,+RT.9%2FRW.8,+Pd.+Klp.,+Kec.+Duren+Sawit,+Kota+Jakarta+Timur,+Daerah+Khusus+Ibukota+Jakarta+13450!3b1!8m2!3d-6.249002!4d106.9291349!16s%2Fg%2F11g0m91tpq!3m5!1s0x2e698cdbee1f6f25:0x36e0849ebbe1b698!8m2!3d-6.2489727!4d106.9291416!16s%2Fg%2F1pzrj11ll?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D"
+                                target="_blank" class="text-white border-b border-transparent hover:border-white pb-1">
+                                Jl. Raya Kapin No 8 <br />
+                                Kalimalang, <br />
+                                Jakarta Timur 13450
+                            </a>
+                        </p>
+                        <p class="text-sm m-0 flex gap-2">
+                            <i class="bi bi-telephone"></i>
+                            <a href="tel:62218651578" target="_blank"
+                                class="text-white border-b border-transparent hover:border-white pb-1">+6221-8651578</a>
+                        </p>
+                        <p class="text-sm m-0 flex gap-2">
+                            <i class="bi bi-whatsapp"></i>
+                            <a href="https://wa.me/628118651578" target="_blank"
+                                class="text-white border-b border-transparent hover:border-white pb-1">+62-811-865-1578</a>
+                        </p>
+                    </div>
+
+                    <div class="flex-1 min-w-[200px] pb-10 md:pb-0">
+                        <p class="mb-3"><strong>Junior & Senior High School</strong></p>
+                        <p class="mb-3 text-sm flex gap-2">
+                            <i class="bi bi-geo-alt"></i>
+                            <a href="https://www.google.com/maps/place/Embun+Pagi+Islamic+School+-+Primary,+Junior+High,+%26+Senior+High/@-6.2489967,106.92656,17z/data=!4m15!1m8!3m7!1s0x2e698cdbe55da37b:0xde1acc8042878f32!2sJl.+Kapin+Raya+Jl.+Raya+Kalimalang+No.8,+RT.9%2FRW.8,+Pd.+Klp.,+Kec.+Duren+Sawit,+Kota+Jakarta+Timur,+Daerah+Khusus+Ibukota+Jakarta+13450!3b1!8m2!3d-6.249002!4d106.9291349!16s%2Fg%2F11g0m91tpq!3m5!1s0x2e698cdbee1f6f25:0x36e0849ebbe1b698!8m2!3d-6.2489727!4d106.9291416!16s%2Fg%2F1pzrj11ll?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D"
+                                target="_blank" class="text-white border-b border-transparent hover:border-white pb-1">
+                                Jl. Raya Kapin No 8 <br />
+                                Kalimalang, <br />
+                                Jakarta Timur 13450
+                            </a>
+                        </p>
+                        <p class="text-sm m-0 flex gap-2">
+                            <i class="bi bi-whatsapp"></i>
+                            <a href="https://wa.me/6281188810170" target="_blank"
+                                class="text-white border-b border-transparent hover:border-white pb-1">+62-811-8881-0170</a>
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </footer>
@@ -368,7 +368,7 @@
                         class="h-8 md:h-10 w-auto object-contain" />
                     <img src="{{ asset('img/logo-cambridge.png') }}" alt="Cambridge International School"
                         class="h-8 md:h-9 w-auto object-contain" />
-                        <img src="{{ asset('img/logo-acreditation.png') }}" alt="Cambridge International School"
+                    <img src="{{ asset('img/logo-acreditation.png') }}" alt="Cambridge International School"
                         class="h-8 md:h-9 w-auto object-contain" />
                 </div>
 
@@ -392,9 +392,8 @@
 
                 <a href="https://wa.me/6281234567890?text=Saya ingin bertanya tentang Primary School">Primary</a>
 
-                <a href="https://wa.me/6281234567890?text=Saya ingin bertanya tentang Middle School">Junior High</a>
-
-                <a href="https://wa.me/6281234567890?text=Saya ingin bertanya tentang High School">Senior High</a>
+                <a href="https://wa.me/6281234567890?text=Saya ingin bertanya tentang Middle School">Junior & Senior
+                    High</a>
             </div>
 
             <a href="#" class="whatsapp-float">

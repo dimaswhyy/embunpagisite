@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
 
-    background-image: url('images/hero-school.jpg');
+    background-image: url('img/hero-image.jpg');
     background-size: cover;
     background-position: center;
 
@@ -17,7 +17,7 @@
     position: absolute;
     inset: 0;
 
-    background-image: url('images/hero-school.jpg');
+    background-image: url('img/hero-image.jpg');
     background-size: cover;
     background-position: center;
 

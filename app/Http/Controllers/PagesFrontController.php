@@ -153,7 +153,7 @@ class PagesFrontController extends Controller
 
     $dataFacilities = [];
     $dataFacilitiesCategory = [];
-    if ($lastSegment == 'facilities') {
+    if ($lastSegment == 'facilities-1') {
       // get data facilities
       $dataFacilities = $this->facilitiesService->getAllData(100);
 
