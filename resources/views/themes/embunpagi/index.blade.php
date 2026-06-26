@@ -1,14 +1,16 @@
 @extends('layout')
-
 @section('content')
 <!-- @include('components.slideshow') -->
 
-@include('components.why-section')
+<!-- @include('components.why-section') -->
+
+@include('components.hero')
+
+@include ('components.about')
 
 @include('components.core')
-<!-- @include('components.latest-news') -->
 
-
+@include('components.academic-program')
 
 @include('components.testimonials')
 

@@ -86,27 +86,88 @@
         color: #0f7db6;
     }
 
+    /* WhatsApp Float */
+    .wa-container {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        z-index: 999999;
+    }
+
     .whatsapp-float {
         position: fixed;
         bottom: 25px;
         right: 25px;
-        width: 60px;
-        height: 60px;
-        background: #25D366;
-        border-radius: 50%;
+
         display: flex;
         align-items: center;
-        justify-content: center;
-        color: white;
+        gap: 12px;
+
+        background: #25D366;
+        color: #fff;
         text-decoration: none;
-        font-size: 32px;
+
+        padding: 12px 20px;
+        border-radius: 50px;
+
+        font-size: 18px;
+        font-weight: 600;
+
         z-index: 999999;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, .2);
+
+        transition: .3s ease;
+    }
+
+    .whatsapp-float i {
+        font-size: 34px;
     }
 
     .whatsapp-float:hover {
-        transform: scale(1.1);
-        color: white;
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, .25);
+    }
+
+    .wa-menu {
+        position: absolute;
+        bottom: 80px;
+        right: 0;
+        width: 220px;
+
+        background: #25D366;
+        border-radius: 15px;
+        overflow: hidden;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+
+        transition: .3s ease;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+    }
+
+    .wa-menu a {
+        display: block;
+        padding: 16px 20px;
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, .15);
+        transition: .2s;
+    }
+
+    .wa-menu a:last-child {
+        border-bottom: none;
+    }
+
+    .wa-menu a:hover {
+        background: rgba(255, 255, 255, .1);
+    }
+
+    .wa-container:hover .wa-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
     </style>
 
@@ -295,27 +356,68 @@
                 </div>
             </div>
         </footer>
+        <!-- Footer Lanjutan -->
+        <div class="bg-white py-4 border-t border-gray-100 font-sans">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+                <!-- LOGO: Sudah diubah ke justify-start (rata kiri) di semua ukuran layar & padding bottom diperkecil (pb-4) -->
+                <div class="flex flex-wrap items-center justify-start gap-6 md:gap-10 pb-4">
+                    <img src="{{ asset('img/logo-tutwurihandayani.png') }}" alt="Tut Wuri Handayani"
+                        class="h-10 md:h-12 w-auto object-contain" />
+                    <img src="{{ asset('img/logo-kurmer.png') }}" alt="Kurikulum Merdeka"
+                        class="h-8 md:h-10 w-auto object-contain" />
+                    <img src="{{ asset('img/logo-cambridge.png') }}" alt="Cambridge International School"
+                        class="h-8 md:h-9 w-auto object-contain" />
+                        <img src="{{ asset('img/logo-acreditation.png') }}" alt="Cambridge International School"
+                        class="h-8 md:h-9 w-auto object-contain" />
+                </div>
+
+                <hr class="border-gray-200" />
+
+                <!-- COPYRIGHT: Padding top diperkecil (pt-4) -->
+                <div class="pt-4 text-left">
+                    <p class="text-sm text-[#0F172A] font-semibold">
+                        ©2026. Embun Pagi Islamic School. All Rights Reserved.
+                    </p>
+                </div>
+
+            </div>
+        </div>
         <!-- Floating WhatsApp -->
-        <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20bertanya%20tentang%20Embun%20Pagi%20Islamic%20School"
-            class="whatsapp-float" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
+        <div class="wa-container">
 
-    @stack('script')
+            <div class="wa-menu">
+                <a href="https://wa.me/6281234567890?text=Saya ingin bertanya tentang Kindergarten">Nursery &
+                    Kindergarten</a>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WN8M3NLBD4"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
+                <a href="https://wa.me/6281234567890?text=Saya ingin bertanya tentang Primary School">Primary</a>
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+                <a href="https://wa.me/6281234567890?text=Saya ingin bertanya tentang Middle School">Junior High</a>
 
-    gtag('config', 'G-WN8M3NLBD4');
-    </script>
+                <a href="https://wa.me/6281234567890?text=Saya ingin bertanya tentang High School">Senior High</a>
+            </div>
+
+            <a href="#" class="whatsapp-float">
+                <i class="fab fa-whatsapp"></i>
+                <span>I'm Interested</span>
+            </a>
+
+        </div>
+
+        @stack('script')
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WN8M3NLBD4"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WN8M3NLBD4');
+        </script>
 </body>
 
 </html>
