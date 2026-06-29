@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
 
-    background-image: url('img/hero-image.jpg');
+    background-image: url('img/hero-ige.jpg');
     background-size: cover;
     background-position: center;
 
@@ -17,7 +17,7 @@
     position: absolute;
     inset: 0;
 
-    background-image: url('img/hero-image.jpg');
+    background-image: url('img/hero-ime.jpg');
     background-size: cover;
     background-position: center;
 
@@ -148,7 +148,7 @@
 
         <div class="hero-buttons">
             <a href="#" class="btn-primary-hero">Enroll Now</a>
-            <a href="#" class="btn-secondary-hero">Virtual Tour</a>
+            <a href="#" class="btn-secondary-hero">School Tour</a>
         </div>
     </div>
 </section>

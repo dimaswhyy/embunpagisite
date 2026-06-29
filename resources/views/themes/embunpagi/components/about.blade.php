@@ -12,7 +12,7 @@
 
             <div class="w-full lg:w-5/12 relative">
                 <img class="w-full h-auto object-cover rounded-[2.5rem]" src="path_ke_foto_kamu.jpg"
-                    alt="Sekolah Murid Merdeka" />
+                    alt="Embun Pagi Islamic School" />
             </div>
 
             <div class="w-full lg:w-7/12 flex flex-col justify-center text-left">

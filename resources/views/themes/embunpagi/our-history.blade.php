@@ -30,7 +30,7 @@
                 <!-- hover:border-b-4 hover:border-green-400 -> Garis hijau muncul saat di-hover -->
                 <a href="{{ route('page_front', 'vision-mission') }}"
                     class="text-sm font-semibold hover:text-blue p-2 px-5 block whitespace-nowrap @if($lastSegment == 'vision-mission') text-blue @endif">
-                    Vision Mission
+                    Vision & Mission
                 </a>
 
                 <a href="{{ route('page_front', 'leaders') }}"
