@@ -59,11 +59,11 @@
         <div class="flex flex-col lg:flex-row gap-5 justify-between items-center">
             <div class="p-0 lg:pl-16 lg:w-6/12">
                 <div class="pb-8">
-                    <h3 class="text-blue text-2xl font-semibold pb-5">Our History</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h3 class="text-blue text-2xl font-semibold pb-5">Vision</h3>
+                    <p>Developing the Islamic leaders of the future.</p>
                 </div>
 
-                <!-- <div class="pb-8">
+                <div class="pb-8">
                     <h3 class="text-blue text-xl font-semibold pb-5">Mission</h3>
                     <ul class="p-0 pb-5">
                         <li class="flex gap-3 items-center pb-5">
@@ -79,12 +79,12 @@
                             <span>Exploring the students' potentials</span>
                         </li>
                     </ul>
-                </div> -->
+                </div>
 
-                <!-- <div class="pb-8">
+                <div class="pb-8">
                     <h3 class="text-blue text-2xl font-semibold pb-5">Goal</h3>
                     <p>To become the leading islamic school with a global vision</p>
-                </div> -->
+                </div>
             </div>
             <div class="flex flex-row flex-wrap lg:w-6/12">
                 <div class="w-6/12 p-2">
@@ -115,15 +115,60 @@
 
 <section class="bg-blue-light py-24 relative">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="max-w-3xl mx-auto">
-            <p class="text-center text-gray-700 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+        <h2 class="text-center lg:text-left mb-10 lg:m-0 font-semibold text-blue text-3xl leading-relaxed manrope pl-8">
+            Our Core Values</h2>
+        <div class="py-5">
+            <div class="splide slide-core-values">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide p-5">
+                            <div class="bg-white p-5 py-8 rounded-2xl h-full">
+                                <div class="flex flex-col justify-center gap-5">
+                                    <img src="{{ asset('storage') }}/integrity-icon.svg" class="h-32" />
+                                    <h4 class="text-blue text-xl font-semibold text-center">Shiddiq</h4>
+                                    <p class="text-center">Educate students to be truthful, have integrity, and be
+                                        trustworthy.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide p-5">
+                            <div class="bg-white p-5 py-8 rounded-2xl h-full">
+                                <div class="flex flex-col justify-center gap-5">
+                                    <img src="{{ asset('storage') }}/integrity-icon-2.svg" class="h-32" />
+                                    <h4 class="text-blue text-xl font-semibold text-center">Amanah</h4>
+                                    <p class="text-center">Teach students to always act with integrity and be
+                                        responsible. </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide p-5">
+                            <div class="bg-white p-5 py-8 rounded-2xl h-full">
+                                <div class="flex flex-col justify-center gap-5">
+                                    <img src="{{ asset('storage') }}/creative-icon.svg" class="h-32" />
+                                    <h4 class="text-blue text-xl font-semibold text-center">Fathonah</h4>
+                                    <p class="text-center">Foster in students greater knowledge, creativity, innovation,
+                                        and critical thinking skills.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide p-5">
+                            <div class="bg-white p-5 py-8 rounded-2xl h-full">
+                                <div class="flex flex-col justify-center gap-5">
+                                    <img src="{{ asset('storage') }}/confidence-icon.svg" class="h-32" />
+                                    <h4 class="text-blue text-xl font-semibold text-center">Tabligh</h4>
+                                    <p class="text-center">Train students to be confident in their abilities and educate
+                                        them about the joy of collaboration and sharing.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- <section class="bg-white pt-16 pb-0 relative">
+<section class="bg-white pt-16 pb-0 relative">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="flex flex-col lg:flex-row gap-5 items-center">
             <div class="w-full lg:w-6/12">
@@ -166,9 +211,9 @@
             </div>
         </div>
     </div>
-</section> -->
+</section>
 
-<!-- <section class="py-20 bg-green-light relative">
+<section class="py-20 bg-green-light relative">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <h2 class="text-center mb-10 lg:m-0 font-semibold text-blue text-3xl leading-relaxed manrope">Our Teams</h2>
         <div class="py-10 mx-auto w-full lg:w-10/12">
@@ -222,5 +267,5 @@
     </div>
     <div class="absolute left-0 bottom-0 w-full h-80 bg-repeat bg-bottom opacity-50"
         style="background-image: url('{{ asset('img/bg-pattern.png') }}'); background-size: auto 100%"></div>
-</section> -->
+</section>
 @stop
