@@ -1,6 +1,7 @@
 import './bootstrap';
 
 import Splide from '@splidejs/splide';
+window.Splide = Splide;
 import { Fancybox } from "@fancyapps/ui";
 import Isotope from 'isotope-layout';
 
@@ -14,17 +15,20 @@ echarts.use([PieChart, TooltipComponent, CanvasRenderer, TitleComponent]);
 const getUriPath = window.location.pathname;
 const lastSegment = getUriPath.split("/").filter(Boolean).pop();
 
-document.getElementById('btn-menu-mobile').addEventListener('click', function() {
-  const menuElm = document.getElementById('menu-mobile');
+const btnMenuMobile = document.getElementById('btn-menu-mobile');
+if (btnMenuMobile) {
+  btnMenuMobile.addEventListener('click', function() {
+    const menuElm = document.getElementById('menu-mobile');
 
-  if (menuElm.classList.contains('block')) {
-    menuElm.classList.remove('block');
-    menuElm.classList.add('hidden');
-  } else {
-    menuElm.classList.remove('hidden');
-    menuElm.classList.add('block');
-  }
-});
+    if (menuElm.classList.contains('block')) {
+      menuElm.classList.remove('block');
+      menuElm.classList.add('hidden');
+    } else {
+      menuElm.classList.remove('hidden');
+      menuElm.classList.add('block');
+    }
+  });
+}
 
 window.addEventListener('scroll', () => {
   const header = document.getElementById('header-main');
@@ -42,6 +46,27 @@ document.addEventListener('DOMContentLoaded', function () {
       autoplay: true,
       padding: '5rem',
       interval: 2000,
+    }).mount();
+  }
+
+  if (document.querySelector('.slide-alumni')) {
+    new Splide('.slide-alumni', {
+      type: 'loop',
+      autoplay: true,
+      interval: 10000,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+      resetProgress: false,
+      rewind: false,
+      perPage: 1,
+      perMove: 1,
+      pagination: true,
+      arrows: true,
+      speed: 700,
+      gap: '0',
+      padding: 0,
+      trimSpace: 'move',
+      focus: 0,
     }).mount();
   }
 

@@ -1,6 +1,299 @@
 @extends('layout')
 
 @section('content')
+
+<style>
+.story-header {
+    max-width: 860px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.story-header .badge-category {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(217, 245, 255, 0.8);
+    color: #0f5e8f;
+    padding: 10px 18px;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+}
+
+.story-header h2 {
+    font-size: clamp(3rem, 4vw, 4.4rem);
+    color: #0f4a7b;
+    margin: 0 0 18px;
+    font-weight: 800;
+    line-height: 1.02;
+}
+
+.story-header h2 .highlight {
+    color: #b3d334;
+}
+
+.story-header p {
+    color: #475569;
+    font-size: 1rem;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.story-slider-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 100%;
+}
+
+.story-slider-container .splide {
+    width: 100%;
+}
+
+.splide__slide {
+    display: block;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.story-card {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    width: 100%;
+    max-width: 100%;
+    background: #ffffff;
+    border-radius: 32px;
+    border: 2px solid rgba(14, 57, 121, 0.08);
+    overflow: hidden;
+    min-height: 420px;
+    align-items: stretch;
+}
+
+.story-content {
+    padding: 44px 44px 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.badge-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f2fbff;
+    color: #0f5e8f;
+    padding: 10px 16px;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.quote-icon {
+    font-size: 3.5rem;
+    color: #53b24f;
+    margin-top: 22px;
+    margin-bottom: -14px;
+}
+
+.quote-text {
+    font-size: 1rem;
+    color: #102840;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 28px 0;
+}
+
+.alumni-meta {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    border-top: 1px solid rgba(31, 112, 166, 0.1);
+    padding-top: 24px;
+    margin-top: 18px;
+}
+
+.meta-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    color: #4a5a6a;
+    font-size: 0.9rem;
+}
+
+.meta-item i {
+    color: #53b24f;
+    font-size: 1rem;
+    margin-top: 3px;
+}
+
+.meta-item strong {
+    display: block;
+    color: #0f3f72;
+    font-weight: 700;
+}
+
+.meta-item span {
+    display: block;
+    color: #68788f;
+    font-size: 0.8rem;
+    margin-top: 2px;
+}
+
+.alumni-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 28px;
+    margin-bottom: 24px;
+}
+
+.profile-avatar {
+    width: 52px;
+    height: 52px;
+    background: radial-gradient(circle at top, #eaf9ff 0%, #d4eefb 100%);
+    color: #0f5e8f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.profile-info h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #0f3f72;
+    font-weight: 700;
+}
+
+.profile-info p {
+    margin: 1px 0 0;
+    font-size: 0.9rem;
+    color: #5a6b7d;
+}
+
+.btn-read-more {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #53b24f;
+    color: #0f4c2d;
+    padding: 12px 24px;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    background: rgba(83, 178, 79, 0.08);
+    transition: all 0.2s ease;
+}
+
+.btn-read-more:hover {
+    background-color: #53b24f;
+    color: #ffffff;
+}
+
+.story-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 0; /* let card height control overall height */
+    height: 100%;
+    display: block;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Prevent very tall images from expanding the card on desktop: fix max height for card */
+@media (min-width: 1025px) {
+    .story-card {
+        max-height: 520px;
+    }
+
+    .story-image {
+        height: 100%;
+    }
+}
+
+/* On smaller screens the layout stacks; allow natural height */
+@media (max-width: 1024px) {
+    .story-card {
+        max-height: none;
+    }
+
+    .story-image {
+        min-height: 340px;
+        height: auto;
+    }
+
+    .story-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.splide.slide-alumni {
+    position: relative;
+}
+
+.splide .splide__track {
+    overflow: hidden;
+}
+
+.splide .splide__list {
+    display: flex;
+    width: 100%;
+}
+
+.splide .splide__slide {
+    position: relative;
+    width: 100% !important;
+    min-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.splide .splide__slide > .story-card {
+    width: 100%;
+}
+
+.splide .splide__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 26px;
+    padding: 0;
+}
+
+.splide .splide__pagination__page {
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background: #d1e8ff;
+    transition: all 0.25s ease;
+}
+
+.splide .splide__pagination__page.is-active {
+    width: 18px;
+    background: #0f4a7b;
+}
+
+
+.splide { visibility: visible !important; position: relative; }
+
+</style>
+
 <section class="my-10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
         <!-- Banner Utama -->
@@ -56,70 +349,121 @@
 
 <section class="bg-gradient-ivory py-20 relative overflow-hidden">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <!-- Judul Section -->
-        <h2 class="text-blue text-4xl font-bold mb-6">Leaders</h2>
-
-        <!-- Deskripsi -->
-        <p class="text-gray-700 mb-10 max-w-4xl leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-
-        <!-- Tab Buttons -->
-        <div class="flex gap-4 mb-12">
-            <button
-                class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full transition-colors">
-                Yayasan Multi Vorinta & Board of Directors
-            </button>
-            <button
-                class="border-2 border-gray-400 text-gray-600 hover:text-blue hover:border-blue font-semibold py-3 px-8 rounded-full transition-colors">
-                School Leaders
-            </button>
+        <div class="story-header">
+            <h2>Our Alumni, <span class="highlight">Our Pride</span></h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+            </p>
         </div>
 
-        <!-- Grid Leaders -->
-        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 justify-items-center">
-            <!-- Leader Card 1 -->
-            <div class="text-center w-full">
-                <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36">
-                    <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-1.jpg"
-                        alt="Tata Eka Putra, B.Bus" />
-                </div>
-                <h3 class="text-blue text-lg font-semibold mb-2">Tata Eka Putra</h3>
-                <p class="text-gray-600 text-sm">Chairman of Governing Board</p>
-            </div>
+        <!-- Konten Alumni -->
+        <div class="story-slider-container">
+            <div class="splide slide-alumni w-full">
+                <div class="splide__track">
+                    <ul class="splide__list">
 
-            <!-- Leader Card 2 -->
-            <div class="text-center w-full">
-                <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36">
-                    <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-2.jpg"
-                        alt="Ivo Fauziah, S.Kom" />
-                </div>
-                <h3 class="text-blue text-lg font-semibold mb-2">Ivo Fauziah</h3>
-                <p class="text-gray-600 text-sm">Branch Administrator</p>
-            </div>
+                        @php
+                        $alumniStories = [
+                        [
+                        'name' => 'Alya Putri Rahma',
+                        'role' => 'Computer Science Graduate',
+                        'quote' => 'Embun Pagi taught me to be disciplined, confident, and always curious. Today I am
+                        thriving in the technology industry because of the strong foundation I received here.',
+                        'batch' => 'Angkatan 2018',
+                        'school' => 'Institut Teknologi Bandung',
+                        'job' => 'Software Engineer',
+                        'company' => 'Digital Startup',
+                        'image' => asset('img/HAY_3600.jpg'),
+                        'avatar' => 'AP',
+                        ],
+                        [
+                        'name' => 'Rizky Ananda',
+                        'role' => 'Entrepreneur & Business Owner',
+                        'quote' => 'The values of integrity and leadership from school shaped the way I build my
+                        business and connect with people around me.',
+                        'batch' => 'Angkatan 2016',
+                        'school' => 'Universitas Indonesia',
+                        'job' => 'Founder',
+                        'company' => 'Cafe Creative',
+                        'image' => asset('img/embun-default-img.jpg'),
+                        'avatar' => 'RA',
+                        ],
+                        [
+                        'name' => 'Nadia Farah',
+                        'role' => 'Medical Student',
+                        'quote' => 'The supportive learning environment helped me grow academically and spiritually. I
+                        am proud to carry the school values into my future career.',
+                        'batch' => 'Angkatan 2019',
+                        'school' => 'Universitas Airlangga',
+                        'job' => 'Student Volunteer',
+                        'company' => 'Community Health',
+                        'image' => asset('img/embun-default-img.jpg'),
+                        'avatar' => 'NF',
+                        ],
+                        [
+                        'name' => 'Fathir Hadi',
+                        'role' => 'Creative Designer',
+                        'quote' => 'I learned how to think creatively and lead with empathy. Those lessons are the
+                        reason my design work now resonates with so many people.',
+                        'batch' => 'Angkatan 2017',
+                        'school' => 'Universitas Padjadjaran',
+                        'job' => 'Lead Designer',
+                        'company' => 'Creative Agency',
+                        'image' => asset('img/embun-default-img.jpg'),
+                        'avatar' => 'FH',
+                        ],
+                        ];
+                        @endphp
 
-            <!-- Leader Card 3 -->
-            <div class="text-center w-full">
-                <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36">
-                    <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-3.jpg"
-                        alt="Ririn Samarinda Wangi" />
-                </div>
-                <h3 class="text-blue text-lg font-semibold mb-2">Ririn Samarinda Wangi</h3>
-                <p class="text-gray-600 text-sm">Accounting Manager</p>
-            </div>
+                        @foreach($alumniStories as $story)
+                        <li class="splide__slide px-2 lg:px-6">
+                            <div class="story-card">
+                                <div class="story-content">
+                                    <span class="badge-tag"><i class="fas fa-star"></i> SUCCESS STORIES</span>
 
-            <!-- Leader Card 4 -->
-            <div class="text-center w-full">
-                <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36">
-                    <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-4.jpg"
-                        alt="Tania" />
+                                    <div class="quote-icon">“</div>
+                                    <blockquote class="quote-text">
+                                        {{ $story['quote'] }}
+                                    </blockquote>
+
+                                    <div class="alumni-meta">
+                                        <div class="meta-item">
+                                            <i class="fas fa-graduation-cap"></i>
+                                            <div><strong>{{ $story['batch'] }}</strong></div>
+                                        </div>
+                                        <div class="meta-item">
+                                            <i class="fas fa-university"></i>
+                                            <div><strong>{{ $story['school'] }}</strong><span>{{ $story['role'] }}</span></div>
+                                        </div>
+                                        <div class="meta-item">
+                                            <i class="fas fa-briefcase"></i>
+                                            <div><strong>{{ $story['job'] }}</strong><span>{{ $story['company'] }}</span></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="alumni-profile">
+                                        <div class="profile-avatar">{{ $story['avatar'] }}</div>
+                                        <div class="profile-info">
+                                            <h3>{{ $story['name'] }}</h3>
+                                            <p>Alumni Embun Pagi Islamic School</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="story-image">
+                                    <img src="{{ $story['image'] }}" alt="{{ $story['name'] }}">
+                                </div>
+                            </div>
+                        </li>
+                        @endforeach
+
+                    </ul>
                 </div>
-                <h3 class="text-blue text-lg font-semibold mb-2">Tania</h3>
-                <p class="text-gray-600 text-sm">Marketing Manager</p>
             </div>
         </div>
     </div>
 
     <img src="{{ asset('img/sun-vector.svg') }}" class="absolute -bottom-16 -left-32 w-72 hidden md:block">
 </section>
+
 @stop

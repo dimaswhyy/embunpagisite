@@ -172,14 +172,14 @@
 
     /* Efek seleksi teks di seluruh halaman web */
     ::selection {
-        background-color: #b3d334;
+        background-color: #86ccf1;
         color: #ffffff;
         /* Warna teks menjadi putih saat diblok */
     }
 
     /* Dukungan untuk browser Firefox lama */
     ::-moz-selection {
-        background-color: #b3d334;
+        background-color: #86ccf1;
         color: #ffffff;
     }
     </style>

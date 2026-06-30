@@ -73,18 +73,6 @@
     pointer-events:none;
 }
 
-/* @keyframes sweep{
-
-    from{
-        transform:translateX(-180%);
-    }
-
-    to{
-        transform:translateX(420%);
-    }
-
-} */
-
 
 .leader-card {
     text-align: center;
