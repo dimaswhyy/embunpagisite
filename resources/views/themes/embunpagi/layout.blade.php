@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
     @if (env('APP_ENV') === 'production')
     @php
@@ -216,6 +217,8 @@
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=712942437755120&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
 </head>
 
 <body class="overflow-x-hidden">

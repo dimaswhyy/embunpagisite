@@ -1,6 +1,6 @@
 import './bootstrap';
 
-import Splide from '@splidejs/splide';
+import Splide, { Autoplay } from '@splidejs/splide';
 window.Splide = Splide;
 import { Fancybox } from "@fancyapps/ui";
 import Isotope from 'isotope-layout';
@@ -46,28 +46,78 @@ document.addEventListener('DOMContentLoaded', function () {
       autoplay: true,
       padding: '5rem',
       interval: 2000,
-    }).mount();
+    }).mount({ Autoplay });
   }
 
   if (document.querySelector('.slide-alumni')) {
-    new Splide('.slide-alumni', {
-      type: 'loop',
-      autoplay: true,
-      interval: 10000,
-      pauseOnHover: false,
-      pauseOnFocus: false,
-      resetProgress: false,
-      rewind: false,
-      perPage: 1,
-      perMove: 1,
-      pagination: true,
-      arrows: true,
-      speed: 700,
-      gap: '0',
-      padding: 0,
-      trimSpace: 'move',
-      focus: 0,
-    }).mount();
+    // Use a lightweight vanilla carousel for the alumni slider (no Splide)
+    (function initAlumniVanilla() {
+      const root = document.querySelector('.slide-alumni');
+      const track = root.querySelector('.splide__track');
+      if (!track) return;
+      const list = track.querySelector('.splide__list');
+      const slides = Array.from(list.children);
+      if (!slides.length) return;
+
+      let idx = 0;
+      let timer = null;
+      const interval = 10000; // 10s
+
+      // Ensure flex layout and slide sizing
+      list.style.display = 'flex';
+      list.style.transition = 'transform 0.7s ease';
+      list.style.willChange = 'transform';
+
+      function setSizes() {
+        const w = track.clientWidth;
+        slides.forEach(s => {
+          s.style.flex = '0 0 ' + w + 'px';
+          s.style.width = w + 'px';
+          s.style.boxSizing = 'border-box';
+        });
+      }
+
+      function goTo(i) {
+        idx = (i + slides.length) % slides.length;
+        const offset = idx * track.clientWidth;
+        list.style.transform = `translateX(-${offset}px)`;
+      }
+
+      function next() { goTo(idx + 1); }
+
+      function start() {
+        stop();
+        timer = setInterval(next, interval);
+      }
+
+      function stop() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      // Resize observer for responsive sizing
+      window.addEventListener('resize', () => {
+        setSizes();
+        goTo(idx);
+      });
+
+      // Initialize
+      setSizes();
+      goTo(0);
+      start();
+
+      // Optional: allow prev/next buttons if present
+      const prev = root.querySelector('.splide__arrow--prev');
+      const nextBtn = root.querySelector('.splide__arrow--next');
+      if (prev) prev.addEventListener('click', () => { goTo(idx - 1); });
+      if (nextBtn) nextBtn.addEventListener('click', () => { goTo(idx + 1); });
+
+      // Keep autoplay running even if user focuses or hovers
+      root.addEventListener('mouseenter', () => { /* no-op to keep running */ });
+      root.addEventListener('focusin', () => { /* no-op */ });
+    })();
   }
 
   const optionSlide4Column = {

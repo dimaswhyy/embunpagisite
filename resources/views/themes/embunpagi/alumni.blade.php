@@ -61,7 +61,7 @@
     margin: 0 !important;
 }
 
-.story-card {
+/* .story-card {
     display: grid;
     grid-template-columns: 1.35fr 1fr;
     width: 100%;
@@ -72,13 +72,36 @@
     overflow: hidden;
     min-height: 420px;
     align-items: stretch;
+} */
+
+.story-card {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    width: 100%;
+    max-width: 100%;
+    background: #ffffff;
+    border-radius: 32px;
+    border: 2px solid rgba(14, 57, 121, 0.08);
+    overflow: hidden;
+
+    /* MODIFIKASI: Kunci tinggi card di desktop agar mutlak sama semua */
+    height: 800px;
+    align-items: stretch;
 }
+
+/* .story-content {
+    padding: 44px 44px 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
 
 .story-content {
     padding: 44px 44px 38px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%; /* Tambahan agar merata */
 }
 
 .badge-tag {
@@ -202,44 +225,35 @@
 .story-image {
     position: relative;
     overflow: hidden;
-    min-height: 0; /* let card height control overall height */
-    height: 100%;
-    display: block;
+    height: 100%; /* Mengikuti tinggi .story-card */
+    width: 100%;
 }
 
 .story-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Memotong gambar secara proporsional agar tidak gepeng */
     display: block;
 }
 
 /* Prevent very tall images from expanding the card on desktop: fix max height for card */
 @media (min-width: 1025px) {
     .story-card {
-        max-height: 520px;
-    }
-
-    .story-image {
-        height: 100%;
+        /* Hapus max-height lama, karena tingginya sudah kita kunci di .story-card atas */
+        height: 530px; 
     }
 }
 
 /* On smaller screens the layout stacks; allow natural height */
 @media (max-width: 1024px) {
     .story-card {
-        max-height: none;
+        grid-template-columns: 1fr; /* Stack konten atas-bawah di mobile */
+        height: auto; /* Biarkan mengalir alami di mobile agar konten tidak terpotong */
+        min-height: unset;
     }
 
     .story-image {
-        min-height: 340px;
-        height: auto;
-    }
-
-    .story-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: 280px; /* Tentukan tinggi gambar yang seragam khusus saat di HP */
     }
 }
 
@@ -264,7 +278,7 @@
     padding: 0 !important;
 }
 
-.splide .splide__slide > .story-card {
+.splide .splide__slide>.story-card {
     width: 100%;
 }
 
@@ -290,8 +304,10 @@
 }
 
 
-.splide { visibility: visible !important; position: relative; }
-
+.splide {
+    visibility: visible !important;
+    position: relative;
+}
 </style>
 
 <section class="my-10">
@@ -353,7 +369,7 @@
             <h2>Our Alumni, <span class="highlight">Our Pride</span></h2>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
+                dolore magna aliqua.
             </p>
         </div>
 
@@ -434,11 +450,15 @@
                                         </div>
                                         <div class="meta-item">
                                             <i class="fas fa-university"></i>
-                                            <div><strong>{{ $story['school'] }}</strong><span>{{ $story['role'] }}</span></div>
+                                            <div>
+                                                <strong>{{ $story['school'] }}</strong><span>{{ $story['role'] }}</span>
+                                            </div>
                                         </div>
                                         <div class="meta-item">
                                             <i class="fas fa-briefcase"></i>
-                                            <div><strong>{{ $story['job'] }}</strong><span>{{ $story['company'] }}</span></div>
+                                            <div>
+                                                <strong>{{ $story['job'] }}</strong><span>{{ $story['company'] }}</span>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -465,5 +485,28 @@
 
     <img src="{{ asset('img/sun-vector.svg') }}" class="absolute -bottom-16 -left-32 w-72 hidden md:block">
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Cek apakah library Splide sudah ter-load
+    if (typeof Splide !== 'undefined') {
+        var alumniSlider = new Splide('.slide-alumni', {
+            type: 'loop', // Memutar kembali ke awal jika sudah habis
+            perPage: 1, // Menampilkan 1 slide per halaman
+            autoplay: true, // MENGIKUTI KEINGINAN: Mengaktifkan autoslide
+            interval: 4000, // Durasi perpindahan (4 detik)
+            pauseOnHover: true, // Berhenti sementara jika mouse di atas slider
+            arrows: false, // Hilangkan panah jika hanya ingin pagination dots
+            pagination: true, // Aktifkan titik navigasi di bawah
+            speed: 800, // Kecepatan transisi (ms)
+            autoHeight  : false,
+        });
+
+        alumniSlider.mount();
+    } else {
+        console.error("Splide.js belum di-load di layout utama Anda.");
+    }
+});
+</script>
 
 @stop
