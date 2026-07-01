@@ -225,59 +225,127 @@
             <div class="leader-card" data-category="yayasan">
                 <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36 leader-image">
                     <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-1.jpg"
-                        alt="Tata Eka Putra, B.Bus" />
+                        alt="Mr. Tata Eka Putra, B.Bus." />
                 </div>
-                <h3 class="text-blue text-lg font-semibold mb-2">Tata Eka Putra</h3>
-                <p class="text-gray-600 text-sm">Chairman of Governing Board</p>
+                <h3 class="text-blue text-lg font-semibold mb-2">Mr. Tata Eka Putra, B.Bus.</h3>
+                <p class="text-gray-600 text-sm">School Director</p>
             </div>
     
             <!-- Leader Card 2 -->
             <div class="leader-card" data-category="yayasan">
                 <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36 leader-image">
                     <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-2.jpg"
-                        alt="Ivo Fauziah, S.Kom" />
+                        alt="Ms. Ririn Samarindawani" />
                 </div>
-                <h3 class="text-blue text-lg font-semibold mb-2">Ivo Fauziah</h3>
-                <p class="text-gray-600 text-sm">Branch Administrator</p>
+                <h3 class="text-blue text-lg font-semibold mb-2">Ms. Ririn Samarindawani</h3>
+                <p class="text-gray-600 text-sm">Foundation Secretary</p>
             </div>
 
             <!-- Leader Card 3 -->
             <div class="leader-card" data-category="yayasan">
                 <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36 leader-image">
                     <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-3.jpg"
-                        alt="Ririn Samarinda Wangi" />
+                        alt="Ms. Ivo Fauziah, S.Kom" />
                 </div>
-                <h3 class="text-blue text-lg font-semibold mb-2">Ririn Samarinda Wangi</h3>
-                <p class="text-gray-600 text-sm">Accounting Manager</p>
+                <h3 class="text-blue text-lg font-semibold mb-2">Ms. Ivo Fauziah, S.Kom</h3>
+                <p class="text-gray-600 text-sm">Foundation Treasurer</p>
             </div>
 
             <!-- Leader Card 4 -->
             <div class="leader-card" data-category="yayasan">
                 <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36 leader-image">
-                    <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-4.jpg" alt="Tania" />
+                    <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-4.jpg" alt="Ms. Shabrina Tania Ekaputri, B.Bus." />
                 </div>
-                <h3 class="text-blue text-lg font-semibold mb-2">Tania</h3>
-                <p class="text-gray-600 text-sm">Marketing Manager</p>
+                <h3 class="text-blue text-lg font-semibold mb-2">Ms. Shabrina Tania Ekaputri, B.Bus.</h3>
+                <p class="text-gray-600 text-sm">Foundation Executive</p>
+            </div>
+
+            <!-- Leader Card 5 -->
+            <div class="leader-card" data-category="yayasan">
+                <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36 leader-image">
+                    <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-4.jpg" alt="Ms. Nova Indriyani" />
+                </div>
+                <h3 class="text-blue text-lg font-semibold mb-2">Ms. Nova Indriyani</h3>
+                <p class="text-gray-600 text-sm">Academic Manager</p>
+            </div>
+
+            <!-- Leader Card 6 -->
+            <div class="leader-card" data-category="yayasan">
+                <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36 leader-image">
+                    <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-4.jpg" alt="Mr. Supriyanto" />
+                </div>
+                <h3 class="text-blue text-lg font-semibold mb-2">Mr. Supriyanto</h3>
+                <p class="text-gray-600 text-sm">General Manager</p>
             </div>
 
             <!-- Sekolah -->
-            <!-- Leader Card 5 -->
+            <!-- Leader Card 8 -->
             <div class="leader-card" data-category="sekolah">
                 <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36 leader-image">
-                    <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-5.jpg" alt="John Doe" />
+                    <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-5.jpg" alt="Ms. Nurul R. Septina, S.Si., M.Pd." />
                 </div>
-                <h3 class="text-blue text-lg font-semibold mb-2">John Doe</h3>
-                <p class="text-gray-600 text-sm">Marketing Manager</p>
+                <h3 class="text-blue text-lg font-semibold mb-2">Ms. Nurul R. Septina, S.Si., M.Pd.</h3>
+                <p class="text-gray-600 text-sm">Upper Level Quality Assurance</p>
             </div>
 
-            <!-- Leader Card6 -->
+            <!-- Leader Card 9 -->
             <div class="leader-card" data-category="sekolah">
                 <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36 leader-image">
                     <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-6.jpg"
-                        alt="Jane Smith" />
+                        alt="Ms. Sri Lestariningsih" />
                 </div>
-                <h3 class="text-blue text-lg font-semibold mb-2">Jane Smith</h3>
-                <p class="text-gray-600 text-sm">Marketing Manager</p>
+                <h3 class="text-blue text-lg font-semibold mb-2">Ms. Sri Lestariningsih</h3>
+                <p class="text-gray-600 text-sm">Lower Level Quality Assurance</p>
+            </div>
+
+            <!-- Leader Card 10 -->
+            <div class="leader-card" data-category="sekolah">
+                <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36 leader-image">
+                    <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-6.jpg"
+                        alt="Mr. Yargustiwan" />
+                </div>
+                <h3 class="text-blue text-lg font-semibold mb-2">Mr. Yargustiwan</h3>
+                <p class="text-gray-600 text-sm">Cambridge and English Quality Assurance</p>
+            </div>
+
+            <!-- Leader Card 11 -->
+            <div class="leader-card" data-category="sekolah">
+                <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36 leader-image">
+                    <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-6.jpg"
+                        alt="Mr. Rizko" />
+                </div>
+                <h3 class="text-blue text-lg font-semibold mb-2">Mr. Rizko</h3>
+                <p class="text-gray-600 text-sm">EPIS Senior High Principal</p>
+            </div>
+
+            <!-- Leader Card 12 -->
+            <div class="leader-card" data-category="sekolah">
+                <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36 leader-image">
+                    <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-6.jpg"
+                        alt="Mr. Syahrul Aripin, S.Pd.I., M.Pd." />
+                </div>
+                <h3 class="text-blue text-lg font-semibold mb-2">Mr. Syahrul Aripin, S.Pd.I., M.Pd.</h3>
+                <p class="text-gray-600 text-sm">EPIS Junior High Principal</p>
+            </div>
+
+            <!-- Leader Card 13 -->
+            <div class="leader-card" data-category="sekolah">
+                <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36 leader-image">
+                    <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-6.jpg"
+                        alt="Ms. Diana" />
+                </div>
+                <h3 class="text-blue text-lg font-semibold mb-2">Ms. Diana</h3>
+                <p class="text-gray-600 text-sm">EPIS Primary Principal</p>
+            </div>
+
+            <!-- Leader Card 14 -->
+            <div class="leader-card" data-category="sekolah">
+                <div class="mb-4 overflow-hidden rounded-full mx-auto w-36 h-36 leader-image">
+                    <img class="w-full h-full object-cover" src="{{ asset('storage') }}/leader-6.jpg"
+                        alt="Mr. Ihsan" />
+                </div>
+                <h3 class="text-blue text-lg font-semibold mb-2">Mr. Ihsan</h3>
+                <p class="text-gray-600 text-sm">EPIS Kindergarten Principal</p>
             </div>
         </div>
     </div>

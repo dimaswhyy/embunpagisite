@@ -25,11 +25,11 @@
 
                 <div class="text-[#475569] text-base md:text-lg leading-relaxed mb-8">
                     <p>
-                        Since its founding in 2005 with just 24 kindergarten students, EPIS has grown significantly. We established our Elementary School in 2007 and expanded to include Junior High School and Senior High School. Driven by a passion to advance education in Indonesia, particularly Islamic education, EPIS is committed to continuous improvement in curriculum, human resources, services, and facilities.
+                        Founded in 2005, <strong>Embun Pagi Islamic School (EPIS) is a trusted Islamic school</strong> dedicated to nurturing future leaders through academic excellence, Islamic values, and character development. We provide a holistic learning experience that equips students with <strong>21st-century skills</strong> while fostering <strong>Akhlakul Karimah</strong>, empowering them to thrive in both this world and the hereafter. We warmly welcome every family to grow and learn with us.
                     </p>
                 </div>
 
-                <a href="#" class="btn-primary text-white font-semibold py-3 px-8 rounded-full w-fit transition duration-200">
+                <a href="{{ route('page_front', 'our-history') }}" class="btn-primary text-white font-semibold py-3 px-8 rounded-full w-fit transition duration-200">
                     See more ...
                 </a>
 

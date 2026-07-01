@@ -60,7 +60,7 @@
             <div class="p-0 lg:pl-16 lg:w-6/12">
                 <div class="pb-8">
                     <h3 class="text-blue text-2xl font-semibold pb-5">Our History</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Founded in 2005 with just 24 kindergarten students, Embun Pagi Islamic School (EPIS) has grown into a trusted Islamic educational institution serving students from Kindergarten through Senior High School. Over the years, EPIS has continued to expand while staying true to its commitment to providing quality education rooted in Islamic values. To further enrich our students' learning experience and prepare them for a global future, we have also adopted the Cambridge Curriculum alongside our national curriculum. Today, we remain dedicated to nurturing academically excellent, morally grounded, and future-ready learners.</p>
                 </div>
 
                 <!-- <div class="pb-8">
