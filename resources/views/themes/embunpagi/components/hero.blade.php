@@ -1,27 +1,48 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+<link rel="preload" href="img/hero-image.jpg" as="image">
+<link rel="preload" href="img/embun-default-img.jpg" as="image">
+<link rel="preload" href="img/HAY_3600.jpg" as="image">
+<link rel="preload" href="img/embun_logo_ig.jpg" as="image">
+
 <style>
 .hero-section {
-    position: relative;
     height: 100vh;
-    display: flex;
-    align-items: center;
-
-    background-image: url('img/hero-ige.jpg');
+    overflow: hidden;
+    background-image: url('img/hero-image.jpg');
     background-size: cover;
     background-position: center;
-
-    overflow: hidden;
+    filter: blur(6px);
+    transform: scale(1.03);
+    opacity: 0.95;
+    transition: filter 0.8s ease, opacity 0.8s ease, transform 0.8s ease;
 }
 
-.hero-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
+.hero-section.is-ready {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+}
 
-    background-image: url('img/hero-ime.jpg');
+.splide {
+    height: 100%;
+    width: 100%;
+}
+
+.splide__track {
+    height: 100%;
+}
+
+.splide__list {
+    height: 100%;
+}
+
+.splide__slide {
+    position: relative;
+    height: 100%;
     background-size: cover;
     background-position: center;
-
-    animation: zoomHero 15s ease-in-out infinite alternate;
+    display: flex;
+    align-items: center;
 }
 
 .hero-overlay {
@@ -34,48 +55,82 @@
 .hero-content {
     position: relative;
     z-index: 2;
-
-    max-width: 700px;
-    margin-left: 10%;
+    max-width: 900px;
+    margin-left: 8%;
     color: white;
 }
 
-.hero-badge {
-    display: inline-block;
-    padding: 10px 18px;
+.hero-badge,
+.hero-content h1,
+.hero-content p,
+.hero-buttons {
+    opacity: 0;
+    transform: translateY(40px);
+}
 
-    background: rgba(255, 255, 255, .15);
-    backdrop-filter: blur(10px);
+.hero-content .hero-badge,
+.hero-content h1,
+.hero-content p,
+.hero-buttons {
+    transition: opacity .5s ease, transform .5s ease;
+}
 
-    border-radius: 50px;
-
-    animation: fadeUp 1s ease forwards;
+.hero-content.is-animated .hero-badge,
+.hero-content.is-animated h1,
+.hero-content.is-animated p,
+.hero-content.is-animated .hero-buttons {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero-content h1 {
-    font-size: clamp(3rem, 6vw, 5rem);
-    line-height: 1.1;
-    margin: 20px 0;
-
-    animation: fadeUp 1s ease .3s forwards;
-    opacity: 0;
+    font-size: clamp(4rem, 7vw, 6.5rem);
+    line-height: 1.05;
+    margin: 0 0 20px 0;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 1.4vw, 1.35rem);
     line-height: 1.8;
-
-    animation: fadeUp 1s ease .6s forwards;
-    opacity: 0;
+    max-width: 720px;
+    margin-bottom: 30px;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 15px;
-    margin-top: 30px;
+    gap: 18px;
+    margin-top: 0;
+}
 
-    animation: fadeUp 1s ease .9s forwards;
-    opacity: 0;
+.btn-primary-hero {
+    background: linear-gradient(to right, #118bcc 0%, #b3d334 100%);
+    color: #fff;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all .3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-secondary-hero {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255,255,255,.85);
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.btn-secondary-hero:hover {
+    background: rgba(255,255,255,.12);
+    border-color: rgba(255,255,255,.95);
 }
 
 .btn-primary-hero {
@@ -86,6 +141,8 @@
     text-decoration: none;
     font-weight: 600;
     transition: all .3s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-primary-hero:hover {
@@ -97,16 +154,14 @@
 .btn-secondary-hero {
     background: rgba(255,255,255,.08);
     backdrop-filter: blur(10px);
-
     color: #fff;
     border: 2px solid rgba(255,255,255,.4);
-
     padding: 15px 35px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-
     transition: all .3s ease;
+    cursor: pointer;
 }
 
 .btn-secondary-hero:hover {
@@ -115,40 +170,163 @@
     color: #fff;
 }
 
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(40px);
+/* Splide customization */
+.splide__arrow {
+    background: rgba(255,255,255,.6);
+    width: 45px;
+    height: 45px;
+}
+
+.splide__arrow:hover {
+    background: rgba(255,255,255,.9);
+}
+
+.splide__pagination__page {
+    background: rgba(255,255,255,.4);
+    width: 10px;
+    height: 10px;
+}
+
+.splide__pagination__page.is-active {
+    background: #fff;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
     }
-    to{
-        opacity:1;
-        transform:translateY(0);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
-</style>
+
+@media (max-width: 768px) {
+    .hero-content {
+        margin-left: 5%;
+        max-width: 92%;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.4rem, 8vw, 3.8rem);
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .btn-primary-hero,
+    .btn-secondary-hero {
+        padding: 14px 28px;
+        font-size: 0.95rem;
+    }
+}</style>
 
 <section class="hero-section">
-    <div class="hero-overlay"></div>
+    <div class="splide" id="heroSlider" role="region" aria-label="Hero Slider">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide" style="background-image: url('img/hero-image.jpg');" data-splide-interval="10000">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <span class="hero-badge">Welcome to Embun Pagi Islamic School</span>
+                        <h1>The School of<br>Future Islamic Leaders</h1>
+                        <p>An Islamic school that nurtures strong character, academic excellence, and global perspectives to shape future Islamic leaders.</p>
+                        <div class="hero-buttons">
+                            <a href="#" class="btn-primary-hero">Enroll Now</a>
+                            <a href="#" class="btn-secondary-hero">School Tour</a>
+                        </div>
+                    </div>
+                </li>
 
-    <div class="hero-content">
-        <span class="hero-badge">
-            Welcome to Embun Pagi Islamic School
-        </span>
+                <li class="splide__slide" style="background-image: url('img/embun-default-img.jpg')">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <span class="hero-badge">Programs</span>
+                        <h1>Preparing Future Leaders</h1>
+                        <p>Our programs combine Islamic values, academic excellence, and international standards to prepare future Islamic leaders for a changing world.</p>
+                        <div class="hero-buttons">
+                            <a href="#" class="btn-primary-hero">Learn More</a>
+                        </div>
+                    </div>
+                </li>
 
-        <h1>
-            Developing Future<br>
-            Islamic Leaders
-        </h1>
+                <li class="splide__slide" style="background-image: url('img/HAY_3600.jpg')">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <span class="hero-badge">Explore</span>
+                        <h1>Discover Your<br>True Potential</h1>
+                        <p>Clubs, activities, and community service to develop leadership and compassion.</p>
+                        <div class="hero-buttons">
+                            <a href="#" class="btn-primary-hero">Learn More</a>
+                        </div>
+                    </div>
+                </li>
 
-        <p>
-            Nurturing young minds with Islamic values,
-            academic excellence, and character development
-            for a brighter future.
-        </p>
-
-        <div class="hero-buttons">
-            <a href="#" class="btn-primary-hero">Enroll Now</a>
-            <a href="#" class="btn-secondary-hero">School Tour</a>
+                <li class="splide__slide" style="background-image: url('img/embun_logo_ig.jpg')">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <span class="hero-badge">Facilities</span>
+                        <h1>World-Class Facilities</h1>
+                        <p>A welcoming learning environment where students feel at home while growing through innovation, collaboration, and academic excellence.</p>
+                        <div class="hero-buttons">
+                            <a href="#" class="btn-primary-hero">Learn More</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
+
+        <div class="splide__pagination"></div>
     </div>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const heroSection = document.querySelector('.hero-section');
+        const heroImages = ['img/hero-image.jpg', 'img/embun-default-img.jpg', 'img/HAY_3600.jpg', 'img/embun_logo_ig.jpg'];
+        const slideItems = document.querySelectorAll('.hero-content');
+
+        const imagePromises = heroImages.map((src) => {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.src = src;
+                img.onload = resolve;
+                img.onerror = resolve;
+            });
+        });
+
+        Promise.all(imagePromises).then(() => {
+            heroSection.classList.add('is-ready');
+        });
+
+        const splide = new Splide('#heroSlider', {
+            type: 'fade',
+            rewind: true,
+            rewindSpeed: 500,
+            pagination: true,
+            arrows: false,
+            autoplay: true,
+            interval: 10000,
+            speed: 500,
+            pauseOnHover: true,
+            pauseOnFocus: true,
+            drag: false
+        });
+
+        splide.on('active', () => {
+            slideItems.forEach((item) => {
+                item.classList.remove('is-animated');
+            });
+
+            const activeContent = document.querySelector('.splide__slide.is-active .hero-content');
+            if (activeContent) {
+                activeContent.classList.add('is-animated');
+            }
+        });
+
+        splide.mount();
+    });
+</script>
