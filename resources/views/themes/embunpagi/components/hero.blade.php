@@ -45,6 +45,15 @@
     align-items: center;
 }
 
+.hero-slide-video video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -223,11 +232,14 @@
     }
 }</style>
 
-<section class="hero-section">
+<section class="hero-section"> 
     <div class="splide" id="heroSlider" role="region" aria-label="Hero Slider">
         <div class="splide__track">
             <ul class="splide__list">
-                <li class="splide__slide" style="background-image: url('img/hero-image.jpg');" data-splide-interval="10000">
+                <li class="splide__slide hero-slide-video" data-splide-interval="10000">
+                    <video autoplay muted loop playsinline poster="img/hero-image.jpg">
+                        <source src="{{ asset('videos/Website.mp4') }}" type="video/mp4">
+                    </video>
                     <div class="hero-overlay"></div>
                     <div class="hero-content">
                         <span class="hero-badge">Welcome to Embun Pagi Islamic School</span>
@@ -244,7 +256,7 @@
                     <div class="hero-overlay"></div>
                     <div class="hero-content">
                         <span class="hero-badge">Programs</span>
-                        <h1>Preparing Future Leaders</h1>
+                        <h1>Preparing<br>Future Leaders</h1>
                         <p>Our programs combine Islamic values, academic excellence, and international standards to prepare future Islamic leaders for a changing world.</p>
                         <div class="hero-buttons">
                             <a href="#" class="btn-primary-hero">Learn More</a>
@@ -277,8 +289,6 @@
                 </li>
             </ul>
         </div>
-
-        <div class="splide__pagination"></div>
     </div>
 </section>
 
@@ -306,17 +316,40 @@
             type: 'fade',
             rewind: true,
             rewindSpeed: 500,
-            pagination: true,
+            pagination: false,
             arrows: false,
-            autoplay: true,
+            autoplay: false,
             interval: 10000,
             speed: 500,
-            pauseOnHover: true,
-            pauseOnFocus: true,
+            pauseOnHover: false,
+            pauseOnFocus: false,
             drag: false
         });
 
-        splide.on('active', () => {
+        let autoplayTimer = null;
+        const firstSlideInterval = 15000;
+        const defaultSlideInterval = 10000;
+        const heroSliderElement = document.getElementById('heroSlider');
+
+        const getCurrentSlideInterval = () => {
+            return splide.index === 0 ? firstSlideInterval : defaultSlideInterval;
+        };
+
+        const clearAutoplayTimer = () => {
+            if (autoplayTimer !== null) {
+                clearTimeout(autoplayTimer);
+                autoplayTimer = null;
+            }
+        };
+
+        const scheduleAutoplay = () => {
+            clearAutoplayTimer();
+            autoplayTimer = setTimeout(() => {
+                splide.go('>');
+            }, getCurrentSlideInterval());
+        };
+
+        splide.on('mounted active', () => {
             slideItems.forEach((item) => {
                 item.classList.remove('is-animated');
             });
@@ -325,7 +358,14 @@
             if (activeContent) {
                 activeContent.classList.add('is-animated');
             }
+
+            scheduleAutoplay();
         });
+
+        heroSliderElement.addEventListener('mouseenter', clearAutoplayTimer);
+        heroSliderElement.addEventListener('mouseleave', scheduleAutoplay);
+        heroSliderElement.addEventListener('focusin', clearAutoplayTimer);
+        heroSliderElement.addEventListener('focusout', scheduleAutoplay);
 
         splide.mount();
     });
