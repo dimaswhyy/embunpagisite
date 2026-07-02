@@ -24,7 +24,7 @@
 <section class="pt-10 pb-10 splide slide-home">
   <div class="splide__track">
     <ul class="splide__list">
-      @foreach($dataModuleContents as $item)
+      @foreach($moduleContents as $item)
       @if ($item->type === 'slideshow')
       @if ($item->translation[0]->image)
       <li class="px-2 lg:px-5 w-full splide__slide item-slide">

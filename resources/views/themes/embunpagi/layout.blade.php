@@ -217,8 +217,6 @@
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=712942437755120&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-
 </head>
 
 <body class="overflow-x-hidden">

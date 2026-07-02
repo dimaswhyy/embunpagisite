@@ -49,6 +49,34 @@ document.addEventListener('DOMContentLoaded', function () {
     }).mount({ Autoplay });
   }
 
+  if (document.getElementById('testimonial-slider')) {
+    if (typeof Splide === 'undefined') {
+      console.error('Splide is not loaded. Testimonial slider will not initialize.');
+    } else {
+      new Splide('#testimonial-slider', {
+        type: 'loop',
+        perPage: 4,
+        perMove: 1,
+        focus: 0,
+        gap: '1.4rem',
+        padding: 0,
+        trimSpace: true,
+        pagination: true,
+        arrows: true,
+        autoplay: true,
+        interval: 3800,
+        pauseOnHover: true,
+        resetProgress: false,
+        drag: 'free',
+        breakpoints: {
+          1400: { perPage: 3 },
+          1100: { perPage: 2 },
+          720: { perPage: 1 }
+        }
+      }).mount({ Autoplay });
+    }
+  }
+
   if (document.querySelector('.slide-alumni')) {
     // Use a lightweight vanilla carousel for the alumni slider (no Splide)
     (function initAlumniVanilla() {

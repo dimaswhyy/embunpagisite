@@ -81,7 +81,7 @@ class PagesFrontController extends Controller
     $dataPages = $this->pagesService->getDataForMenu();
 
     // get all data module content
-    $dataModuleContents = $this->moduleContent->getAllData();
+    $moduleContents = $this->moduleContent->getAllData();
 
     // get data news
     $dataNews = $this->newsService->getAllData(3);
@@ -92,7 +92,7 @@ class PagesFrontController extends Controller
     // get data instagram posts
     $dataInstagramPost = InstagramPost::orderBy('id', 'asc')->get();
     
-    $compact = compact('page', 'slug', 'dataThisPage', 'thisDataPage', 'dataPages', 'dataModuleContents', 'dataNews', 'dataNewsCategory', 'dataInstagramPost', 'lastSegment');
+    $compact = compact('page', 'slug', 'dataThisPage', 'thisDataPage', 'dataPages', 'moduleContents', 'dataNews', 'dataNewsCategory', 'dataInstagramPost', 'lastSegment');
     return view($template, $compact);
   }
 
@@ -129,7 +129,7 @@ class PagesFrontController extends Controller
     $dataPages = $this->pagesService->getDataForMenu();
 
     // get all data module content
-    $dataModuleContents = $this->moduleContent->getAllData();
+    $moduleContents = $this->moduleContent->getAllData();
 
     // get data news
     $dataNews = $this->newsService->getAllData(3);
@@ -201,7 +201,7 @@ class PagesFrontController extends Controller
         $dataInstagramPost = InstagramPost::orderBy('id', 'asc')->get();
     }
     
-    $compact = compact('page', 'slug', 'dataThisPage', 'thisDataPage', 'dataPages', 'dataModuleContents', 'dataNews', 'dataNewsCategory', 'dataNewsPage', 'dataFacilities', 'dataFacilitiesCategory', 'dataGalleries', 'dataCareer', 'lastSegment', 'dataInstagramPost');
+    $compact = compact('page', 'slug', 'dataThisPage', 'thisDataPage', 'dataPages', 'moduleContents', 'dataNews', 'dataNewsCategory', 'dataNewsPage', 'dataFacilities', 'dataFacilitiesCategory', 'dataGalleries', 'dataCareer', 'lastSegment', 'dataInstagramPost');
     return view($template, $compact);
   }
   

@@ -10,7 +10,7 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="flex gap-10 md:gap-20 flex-col lg:flex-row">
       <div class="w-full h-auto lg:w-6/12 lg:h-45rem relative">
-        @foreach($dataModuleContents as $item)
+        @foreach($moduleContents as $item)
         @if ($item->type === 'why-section')
         @if ($item->translation[0]->image)
         <img class="w-full h-full object-cover rounded-lg rounded-br-3xl" src="{{ env('USE_AWS') ? env('AWS_URL') : asset('storage') }}/{{ $item->translation[0]->image }}" alt="{{ $item->translation[0]->image }}" />
@@ -21,7 +21,7 @@
         <img src="{{ asset('img/abstract-dots.svg') }}" class="absolute top-20 -right-10 w-20" />
       </div>
       <div class="w-full sm:w-9/12 md:w-7/12 xl:w-6/12 block m-auto lg:m-0 flex flex-col items-center">
-        @foreach($dataModuleContents as $item)
+        @foreach($moduleContents as $item)
         @if ($item->type === 'why-section')
         <h2 class="font-semibold text-blue text-3xl leading-relaxed w-full lg:w-80 manrope text-center">
         {{ $item->translation[0]->title }}
@@ -31,7 +31,7 @@
 
         <div class="relative block py-10 pb-20 sm:w-9/12">
           <div class="flex gap-5 pb-14">
-            @foreach($dataModuleContents as $key => $item)
+            @foreach($moduleContents as $key => $item)
             @if ($item->type === 'why-section-content')
             @if ($key === 8)
             <div class="w-48 h-48 p-2 bg-blue-light flex items-center justify-center rounded-full relative group">
@@ -49,7 +49,7 @@
             @endif
             @endforeach
 
-            @foreach($dataModuleContents as $key => $item)
+            @foreach($moduleContents as $key => $item)
             @if ($item->type === 'why-section-content')
             @if ($key === 7)
             <div class="w-40 h-40 p-2 bg-green-light self-end -mb-8 flex items-center justify-center rounded-full relative group">
@@ -69,7 +69,7 @@
 
           </div>
           <div class="flex gap-5 justify-end">
-            @foreach($dataModuleContents as $key => $item)
+            @foreach($moduleContents as $key => $item)
             @if ($item->type === 'why-section-content')
             @if ($key === 6)
             <div class="w-32 h-32 p-2 bg-orange-light self-start -mt-10 flex items-center justify-center rounded-full relative group">
@@ -87,7 +87,7 @@
             @endif
             @endforeach
 
-            @foreach($dataModuleContents as $key => $item)
+            @foreach($moduleContents as $key => $item)
             @if ($item->type === 'why-section-content')
             @if ($key === 5)
             <div class="w-40 h-40 p-2 bg-blue-light flex items-center justify-center rounded-full relative group">

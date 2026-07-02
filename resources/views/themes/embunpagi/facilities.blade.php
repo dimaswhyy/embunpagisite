@@ -2,6 +2,54 @@
 
 @section('content')
 
+<section class="my-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
+        <!-- Banner Utama -->
+        <div class="rounded-3xl w-full h-96 overflow-hidden relative shadow-lg">
+            <img class="w-full h-full object-cover" src="{{ asset('storage') }}/WEBSITE%20FOTO%20SLIDE%20(2).png"
+                alt="WEBSITE%20FOTO%20SLIDE%20(2).png" />
+            <div
+                class="absolute top-0 left-0 w-full h-full p-10 text-white flex justify-center items-end text-3xl font-bold bg-gradient-blue-transparent">
+                Facilities</div>
+        </div>
+
+        <!-- Submenu Navigasi -->
+        <div class="bg-white rounded-2xl shadow-md border border-gray-100 w-full overflow-hidden">
+            <!-- Menggunakan flex-wrap agar aman dan rapi saat dibuka di mobile -->
+            <div
+                class="flex flex-wrap justify-center items-center gap-x-2 md:gap-x-6 text-sm font-semibold text-gray-500 py-1">
+
+                <!-- Kondisi AKTIF (Misal saat ini di halaman Our History) -->
+                <!-- Menggunakan border-b-4 hijau dan teks biru gelap agar kontras -->
+                <a href="{{ route('page_front', 'facilities') }}"
+                    class="text-sm font-semibold hover:text-blue p-2 px-5 block whitespace-nowrap @if($lastSegment == 'facilities') text-blue @endif">
+                    Facilities
+                </a>
+
+                <!-- Kondisi HOVER (Halaman Biasa) -->
+                <!-- hover:text-blue-600 -> Teks berubah biru -->
+                <!-- hover:border-b-4 hover:border-green-400 -> Garis hijau muncul saat di-hover -->
+                <a href="{{ route('page_front', 'clubs') }}"
+                    class="text-sm font-semibold hover:text-blue p-2 px-5 block whitespace-nowrap @if($lastSegment == 'clubs') text-blue @endif">
+                    Clubs
+                </a>
+
+                <a href="{{ route('page_front', 'islamic-life') }}"
+                    class="text-sm font-semibold hover:text-blue p-2 px-5 block whitespace-nowrap @if($lastSegment == 'islamic-life') text-blue @endif">
+                    Islamic Life
+                </a>
+
+                <a href="{{ route('page_front', 'school-life') }}"
+                    class="text-sm font-semibold hover:text-blue p-2 px-5 block whitespace-nowrap @if($lastSegment == 'school-life') text-blue @endif">
+                    School Life
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 pb-0 relative">
     <h2 class="text-center mb-10 lg:m-0 font-semibold text-blue text-3xl leading-relaxed manrope pb-5">School Tour</h2>
     @include('components.school-tour')

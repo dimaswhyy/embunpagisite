@@ -1,12 +1,8 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-<link rel="preload" href="img/hero-image.jpg" as="image">
-<link rel="preload" href="img/embun-default-img.jpg" as="image">
-<link rel="preload" href="img/HAY_3600.jpg" as="image">
-<link rel="preload" href="img/embun_logo_ig.jpg" as="image">
+
 
 <style>
 .hero-section {
-    height: 100vh;
+    height: 100svh;
     overflow: hidden;
     background-image: url('img/hero-image.jpg');
     background-size: cover;
@@ -15,6 +11,8 @@
     transform: scale(1.03);
     opacity: 0.95;
     transition: filter 0.8s ease, opacity 0.8s ease, transform 0.8s ease;
+    display: flex;
+    align-items: stretch;
 }
 
 .hero-section.is-ready {
@@ -23,26 +21,29 @@
     opacity: 1;
 }
 
-.splide {
-    height: 100%;
+#heroSlider {
     width: 100%;
+    height: 100%;
+    flex: 1;
 }
 
-.splide__track {
+#heroSlider .splide__track {
     height: 100%;
 }
 
-.splide__list {
+#heroSlider .splide__list {
     height: 100%;
 }
 
-.splide__slide {
+#heroSlider .splide__slide {
     position: relative;
     height: 100%;
+    width: 100%;
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .hero-slide-video video {
@@ -66,6 +67,8 @@
     z-index: 2;
     max-width: 900px;
     margin-left: 8%;
+    margin-top: clamp(80px, 12vh, 120px);
+    padding-bottom: 2rem;
     color: white;
 }
 
@@ -93,13 +96,13 @@
 }
 
 .hero-content h1 {
-    font-size: clamp(4rem, 7vw, 6.5rem);
+    font-size: clamp(2rem, 3vw, 4rem);
     line-height: 1.05;
     margin: 0 0 20px 0;
 }
 
 .hero-content p {
-    font-size: clamp(1.2rem, 1.4vw, 1.35rem);
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
     line-height: 1.8;
     max-width: 720px;
     margin-bottom: 30px;
@@ -180,23 +183,23 @@
 }
 
 /* Splide customization */
-.splide__arrow {
+.hero-section .splide__arrow {
     background: rgba(255,255,255,.6);
     width: 45px;
     height: 45px;
 }
 
-.splide__arrow:hover {
+.hero-section .splide__arrow:hover {
     background: rgba(255,255,255,.9);
 }
 
-.splide__pagination__page {
+.hero-section .splide__pagination__page {
     background: rgba(255,255,255,.4);
     width: 10px;
     height: 10px;
 }
 
-.splide__pagination__page.is-active {
+.hero-section .splide__pagination__page.is-active {
     background: #fff;
 }
 
@@ -242,7 +245,6 @@
                     </video>
                     <div class="hero-overlay"></div>
                     <div class="hero-content">
-                        <span class="hero-badge">Welcome to Embun Pagi Islamic School</span>
                         <h1>The School of<br>Future Islamic Leaders</h1>
                         <p>An Islamic school that nurtures strong character, academic excellence, and global perspectives to shape future Islamic leaders.</p>
                         <div class="hero-buttons">
@@ -255,7 +257,6 @@
                 <li class="splide__slide" style="background-image: url('img/embun-default-img.jpg')">
                     <div class="hero-overlay"></div>
                     <div class="hero-content">
-                        <span class="hero-badge">Programs</span>
                         <h1>Preparing<br>Future Leaders</h1>
                         <p>Our programs combine Islamic values, academic excellence, and international standards to prepare future Islamic leaders for a changing world.</p>
                         <div class="hero-buttons">
@@ -267,7 +268,6 @@
                 <li class="splide__slide" style="background-image: url('img/HAY_3600.jpg')">
                     <div class="hero-overlay"></div>
                     <div class="hero-content">
-                        <span class="hero-badge">Explore</span>
                         <h1>Discover Your<br>True Potential</h1>
                         <p>Clubs, activities, and community service to develop leadership and compassion.</p>
                         <div class="hero-buttons">
@@ -279,7 +279,6 @@
                 <li class="splide__slide" style="background-image: url('img/embun_logo_ig.jpg')">
                     <div class="hero-overlay"></div>
                     <div class="hero-content">
-                        <span class="hero-badge">Facilities</span>
                         <h1>World-Class Facilities</h1>
                         <p>A welcoming learning environment where students feel at home while growing through innovation, collaboration, and academic excellence.</p>
                         <div class="hero-buttons">

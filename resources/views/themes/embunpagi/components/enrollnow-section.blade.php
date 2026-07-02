@@ -2,7 +2,7 @@
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">  
     <div class="flex flex-col-reverse lg:flex-row lg:gap-20 items-end justify-center">
       <div class="w-full lg:w-10/12">
-        @foreach($dataModuleContents as $item)
+        @foreach($moduleContents as $item)
         @if ($item->type === 'enrollnow-section')
         @if ($item->translation[0]->image)
         <img class="w-full" src="{{ env('USE_AWS') ? env('AWS_URL') : asset('storage') }}/{{ $item->translation[0]->image }}" alt="{{ $item->translation[0]->image }}" />
@@ -11,7 +11,7 @@
         @endforeach
       </div>
       <div class="w-full p-10 pb-0 lg:2/12 self-center">
-        @foreach($dataModuleContents as $item)
+        @foreach($moduleContents as $item)
         @if ($item->type === 'enrollnow-section')
         <h2 class="mb-10 font-semibold text-blue text-3xl leading-relaxed manrope lg:w-8/12 text-center lg:text-left">{{ $item->translation[0]->title }}</h2>
         @endif
